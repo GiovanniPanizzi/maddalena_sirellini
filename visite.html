@@ -8,9 +8,12 @@
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://www.tuosito.it/visite.html">
 
-  <!-- Preload CSS (non-blocking) -->
-  <link rel="preload" href="index.css" as="style" onload="this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="index.css"></noscript>
+   <!-- Preload immagini critiche -->
+
+  <!-- Preconnect per font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="visite.css">
 
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website">
@@ -107,15 +110,50 @@
   </header>
 
   <main id="main">
+      <h1>Visite</h1>
+      <h2>Le visite di controllo sono consigliate periodicamente per preservare la salute visiva e prevenire l'evoluzione di patologie. <br> 
+          Le visite oculistiche comprendono:</h2>
+      <div class="visits">
+          <ul>
+            <li><h3>Anamnesi accurata</h3><p></p></li>
+            <li><h3>Misurazione della vista</h3><p></p></li>
+            <li><h3>Esame del fondo oculare</h3><p></p></li>
+            <li><h3>Controllo della pressione intraoculare</h3><p></p></li>
+            <li><h3>Valutazione della motilità oculare</h3><p></p></li>
+            <li><h3>OCT</h3><p></p></li>
+          </ul>
+          <ul>
+            <li><h3>Foto Fundus</h3><p></p></li>
+            <li><h3>Pachimetria</h3><p></p></li>
+            <li><h3>RFNL</h3><p></p></li>
+            <li><h3>Topografia corneale (Parma via Mazzini)</h3><p></p></li>
+            <li><h3>Endotelio corneale (Parma via Mazzini)</h3><p></p></li>
+            <li><h3>Ecobiometria (Parma via Mazzini)</h3><p></p></li>
+            <li><h3>Campo visivo computerizzato (Parma via Mazzini)</h3><p></p></li>
+          </ul>
+      </div>
+
+      <p class="final-paragraph">Nella sede di via Mazzini sono inoltre offerti trattamenti di capsulotomia e iridotomia YAG laser SLT (trabeculectomia laser selettiva)</p>
+
+      <div class="contacts">
+        <ul>
+          <li><h4>Piccole Figlie Hospital.</h4><p><a href="tel:+390521000000"><span itemprop="telephone">+39 0521 000000</span></a></p></li>
+          <li><h4>Studio Oculistico di Traversetolo.</h4><p><a href="tel:+390521000000"><span itemprop="telephone">+39 0521 000000</span></a></p></li>
+          <li><h4>Studio Oculistico Dottor Carpi.</h4><p><a href="tel:+390521000000"><span itemprop="telephone">+39 0521 000000</span></a></p></li>
+        </ul>
+      </div>
   </main>
 
   <footer>
-    <p>© 2025 Dott.ssa Maddalena Sirellini. Tutti i diritti riservati.</p>
     <nav aria-label="Link utili">
       <ul>
-        <li><a href="/privacy.html">Privacy</a></li>
-        <li><a href="/cookie.html">Cookie</a></li>
-        <li><a href="/sitemap.xml">Sitemap</a></li>
+        <li><a href="#">Home</a></li>
+        <li><span class="nav-list-divider" aria-hidden="true"></span></li>
+        <li><a href="visite.html" aria-current="page">Visite</a></li>
+        <li><span class="nav-list-divider" aria-hidden="true"></span></li>
+        <li><a href="collaborazioni.html">Collaborazioni</a></li>
+        <li><span class="nav-list-divider" aria-hidden="true"></span></li>
+        <li><a href="curriculum.html">Curriculum</a></li>
       </ul>
     </nav>
   </footer>
@@ -238,6 +276,19 @@
         }
       }
     })();
+
+    const headings = document.querySelectorAll('.visits ul li h3');
+
+    headings.forEach(h3 => {
+      h3.addEventListener('click', () => {
+        const p = h3.nextElementSibling;
+        if (p.style.display === "block") {
+          p.style.display = "none";
+        } else {
+          p.style.display = "block";
+        }
+      });
+    });
   </script>
 </body>
 </html>

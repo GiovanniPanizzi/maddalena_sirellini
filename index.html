@@ -9,8 +9,13 @@
   <link rel="canonical" href="https://www.tuosito.it/visite.html">
 
   <!-- Preload CSS (non-blocking) -->
-  <link rel="preload" href="index.css" as="style" onload="this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="index.css"></noscript>
+   <!-- Preload immagini critiche -->
+  <link rel="preload" href="images/PAG 1 IMMAG.png" as="image">
+
+  <!-- Preconnect per font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="index.css">
 
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website">
@@ -89,7 +94,7 @@
 
       <!-- navList è hidden ai lettori di schermo quando chiusa -->
       <ul id="nav-list" class="nav-list" aria-hidden="true">
-        <li><a href="#">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><span class="nav-list-divider" aria-hidden="true"></span></li>
         <li><a href="visite.html" aria-current="page">Visite</a></li>
         <li><span class="nav-list-divider" aria-hidden="true"></span></li>
@@ -109,8 +114,7 @@
   <main id="main">
     <!-- HERO (decorativo: alt vuoto) -->
     <section id="home" class="hero" aria-label="Hero">
-        <img id="hero-decor-1" class="hero-decor" src="images/LINEA.png" alt="" loading="eager" height="200px" width="200px">
-        <img id="hero-decor-2" class="hero-decor" src="images/sirellini-demo.jpg" alt="" loading="eager" height="200px" width="200px">
+      <img id="hero-decor-1" class="hero-decor" src="images/PAG 1 IMMAG.png" alt="" loading="eager">
         <div class="hero-text">
             <h1>
                 Maddalena <br>
@@ -135,37 +139,39 @@
         <h4 itemprop="name">Studio Oculistico Dottor Carpi</h4>
         <p><a href="tel:+390521000000"><span itemprop="telephone">+39 0521 000000</span></a></p>
       </div>
-
       <article class="location-item" itemprop="location" itemscope itemtype="http://schema.org/Place">
         <h4 itemprop="name">Ospedale Piccole Figlie</h4>
         <a href="https://www.google.com/maps/place/Piccole+Figlie+Hospital" target="_blank" rel="noopener noreferrer">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2831.6035927781686!2d10.319687299999996!3d44.7888863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47806b1bc4a8bf49%3A0x40dd0787dfbff95!2sPiccole%20Figlie%20Hospital!5e0!3m2!1sen!2sit!4v1756457885015!5m2!1sen!2sit" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2831.6035927781686!2d10.319687299999996!3d44.7888863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47806b1bc4a8bf49%3A0x40dd0787dfbff95!2sPiccole%20Figlie%20Hospital!5e0!3m2!1sen!2sit!4v1756457885015!5m2!1sen!2sit" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" width="300" height="200"></iframe>
         </a>
       </article>
 
       <article class="location-item" itemprop="location" itemscope itemtype="http://schema.org/Place">
         <h4 itemprop="name">Studio Oculistico Traversetolo</h4>
         <a href="https://www.google.com/maps/place/Traversetolo" target="_blank" rel="noopener noreferrer">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2831.6035927781686!2d10.319687299999996!3d44.7888863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47806b1bc4a8bf49%3A0x40dd0787dfbff95!2sPiccole%20Figlie%20Hospital!5e0!3m2!1sen!2sit!4v1756457885015!5m2!1sen!2sit" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2831.6035927781686!2d10.319687299999996!3d44.7888863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47806b1bc4a8bf49%3A0x40dd0787dfbff95!2sPiccole%20Figlie%20Hospital!5e0!3m2!1sen!2sit!4v1756457885015!5m2!1sen!2sit" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" width="300" height="200"></iframe>
         </a>
       </article>
 
       <article class="location-item" itemprop="location" itemscope itemtype="http://schema.org/Place">
         <h4 itemprop="name">Studio Oculistico Dottor Carpi</h4>
         <a href="https://www.google.com/maps/search/Studio+oculistico+Carpi" target="_blank" rel="noopener noreferrer">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2831.6035927781686!2d10.319687299999996!3d44.7888863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47806b1bc4a8bf49%3A0x40dd0787dfbff95!2sPiccole%20Figlie%20Hospital!5e0!3m2!1sen!2sit!4v1756457885015!5m2!1sen!2sit" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2831.6035927781686!2d10.319687299999996!3d44.7888863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47806b1bc4a8bf49%3A0x40dd0787dfbff95!2sPiccole%20Figlie%20Hospital!5e0!3m2!1sen!2sit!4v1756457885015!5m2!1sen!2sit" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" width="300" height="200"></iframe>
         </a>
       </article>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 Dott.ssa Maddalena Sirellini. Tutti i diritti riservati.</p>
     <nav aria-label="Link utili">
       <ul>
-        <li><a href="/privacy.html">Privacy</a></li>
-        <li><a href="/cookie.html">Cookie</a></li>
-        <li><a href="/sitemap.xml">Sitemap</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><span class="nav-list-divider" aria-hidden="true"></span></li>
+        <li><a href="visite.html" aria-current="page">Visite</a></li>
+        <li><span class="nav-list-divider" aria-hidden="true"></span></li>
+        <li><a href="collaborazioni.html">Collaborazioni</a></li>
+        <li><span class="nav-list-divider" aria-hidden="true"></span></li>
+        <li><a href="curriculum.html">Curriculum</a></li>
       </ul>
     </nav>
   </footer>
