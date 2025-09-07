@@ -303,17 +303,18 @@ header {
 }
 
 .location-list h4 {
+    padding-top: 0;
     margin-bottom: 0;
-    margin-top: var(--spacing-unit);
 }
 
 .location-item {
     position: relative; /* permette a h4 di posizionarsi sopra */
+    padding: calc(var(--spacing-unit) * 4);
 }
 
 .location-item h4 {
     position: absolute;        /* esce dal flusso senza spingere gli altri elementi */
-    top: -1.5rem;              /* regola quanto "si accavalla" sull'iframe */
+    top: 2rem;              /* regola quanto "si accavalla" sull'iframe */
     left: 50%;
     transform: translateX(-50%);
     background-color: var(--color-accent-5);
@@ -343,7 +344,6 @@ iframe {
     position: relative;
     z-index: 5;
     border-radius: var(--border-radius);
-    margin-bottom: calc(var(--spacing-unit) * 4);
 }
 
 /*------------------------------------*\

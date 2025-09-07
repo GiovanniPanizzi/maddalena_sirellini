@@ -13,7 +13,7 @@
   <!-- Preconnect per font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="collaborazioni.css">
+  <link rel="stylesheet" href="curriculum.css">
 
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website">
@@ -110,7 +110,7 @@
   </header>
 
   <main id="main">
-      <h1>Curriculum</h1>
+      <h1>Maddalena <br> Sirellini</h1>
 
         <p>Conseguita nel 1996 Laurea in Medicina e Chirurgia presso l'Università degli Studi di Pavia</p>
         <p>Conseguita nel 2000 specializzazione in Oftalmologia presso l'Università degli studi di Modena a pieni voti con lode</p>
@@ -133,7 +133,7 @@
   <footer>
     <nav aria-label="Link utili">
       <ul>
-        <li><a href="#">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><span class="nav-list-divider" aria-hidden="true"></span></li>
         <li><a href="visite.html" aria-current="page">Visite</a></li>
         <li><span class="nav-list-divider" aria-hidden="true"></span></li>
@@ -141,8 +141,24 @@
         <li><span class="nav-list-divider" aria-hidden="true"></span></li>
         <li><a href="curriculum.html">Curriculum</a></li>
       </ul>
+      <p><a href="#" id="manage-cookies" style="display: block; margin-top: 20px;">Gestisci preferenze cookie</a></p>
     </nav>
   </footer>
+
+  <!-- Banner Cookie -->
+  <div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #2c3e50; color: #fff; padding: 20px; box-shadow: 0 -2px 10px rgba(0,0,0,0.2); z-index: 10000; display: none; font-family: Arial, sans-serif;">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;">
+      <div style="flex: 1; min-width: 300px; margin-bottom: 10px;">
+        <p style="margin: 0; line-height: 1.5;">Utilizziamo cookie tecnici e di terze parti (Google Maps) per migliorare la tua esperienza di navigazione. Puoi accettare o rifiutare i cookie di terze parti. 
+          <a href="cookies.html" style="color: #3498db; text-decoration: underline;">Maggiori informazioni</a>
+        </p>
+      </div>
+      <div style="display: flex; gap: 10px;">
+        <button id="accept-cookies" style="padding: 10px 20px; background: #27ae60; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">Accetta</button>
+        <button id="reject-cookies" style="padding: 10px 20px; background: #e74c3c; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">Rifiuta</button>
+      </div>
+    </div>
+  </div>
 
   <!-- Script non-blocking: gestione menu con aria-expanded, aria-hidden e focus trap semplice -->
   <script>

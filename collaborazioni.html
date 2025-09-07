@@ -8,8 +8,6 @@
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://www.tuosito.it/visite.html">
 
-   <!-- Preload immagini critiche -->
-
   <!-- Preconnect per font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -111,21 +109,20 @@
 
   <main id="main">
         <h1>COLLABORAZIONI</h1>
-        <p>Lo studio si avvale della collaborazione di diversi specialisti:</p>
+        <p class="p_1">Lo studio si avvale della collaborazione di diversi specialisti:</p>
 
-        <p>Dott.ssa Elena Marcotti ortottista</p>
-        <p>Dott.ssa Libera Zaffarano ortottista</p>
+        <p class="p_2">Dott.ssa <strong>Elena Marcotti</strong> ortottista</p>
+        <p class="p_3">Dott.ssa <strong>Libera Zaffarano</strong> ortottista</p>
 
-        <p>grazie alle quali sono disponibili: visita ortottica, eserci ortottici e riabilitazione ipovisione</p>
+        <p class="p_4">grazie alle quali sono disponibili: <strong>visita ortottica, eserci ortottici e riabilitazione ipovisione</strong>.</p>
 
-        <p>Collaborazione pluridecennale con il Dott.Renzo Carpi medico chirurgo specialista in Oftalmologia con particolare specializzazione nella chirurgia della cataratta e nella correzione dei difetti refrattivi via laser che chirurgica.</p>
+        <p class="p_5">Collaborazione pluridecennale con il <strong>Dott. Renzo Carpi</strong> medico chirurgo specialista in Oftalmologia con particolare specializzazione nella chirurgia della cataratta e nella correzione dei difetti refrattivi via laser che chirurgica.</p>
   </main>
-
 
   <footer>
     <nav aria-label="Link utili">
       <ul>
-        <li><a href="#">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><span class="nav-list-divider" aria-hidden="true"></span></li>
         <li><a href="visite.html" aria-current="page">Visite</a></li>
         <li><span class="nav-list-divider" aria-hidden="true"></span></li>
@@ -133,8 +130,24 @@
         <li><span class="nav-list-divider" aria-hidden="true"></span></li>
         <li><a href="curriculum.html">Curriculum</a></li>
       </ul>
+      <p><a href="#" id="manage-cookies" style="display: block; margin-top: 20px;">Gestisci preferenze cookie</a></p>
     </nav>
   </footer>
+
+  <!-- Banner Cookie -->
+  <div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #2c3e50; color: #fff; padding: 20px; box-shadow: 0 -2px 10px rgba(0,0,0,0.2); z-index: 10000; display: none; font-family: Arial, sans-serif;">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;">
+      <div style="flex: 1; min-width: 300px; margin-bottom: 10px;">
+        <p style="margin: 0; line-height: 1.5;">Utilizziamo cookie tecnici e di terze parti (Google Maps) per migliorare la tua esperienza di navigazione. Puoi accettare o rifiutare i cookie di terze parti. 
+          <a href="cookies.html" style="color: #3498db; text-decoration: underline;">Maggiori informazioni</a>
+        </p>
+      </div>
+      <div style="display: flex; gap: 10px;">
+        <button id="accept-cookies" style="padding: 10px 20px; background: #27ae60; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">Accetta</button>
+        <button id="reject-cookies" style="padding: 10px 20px; background: #e74c3c; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">Rifiuta</button>
+      </div>
+    </div>
+  </div>
 
   <!-- Script non-blocking: gestione menu con aria-expanded, aria-hidden e focus trap semplice -->
   <script>
@@ -254,6 +267,74 @@
         }
       }
     })();
+  </script>
+
+<script>
+  (function() {
+    const config = {
+      cookieBannerId: 'cookie-banner',
+      acceptButtonId: 'accept-cookies',
+      rejectButtonId: 'reject-cookies',
+      manageCookiesId: 'manage-cookies',
+      storageKey: 'cookieConsent'
+    };
+  
+    const cookieBanner = document.getElementById(config.cookieBannerId);
+    const manageCookiesLink = document.getElementById(config.manageCookiesId);
+  
+    function getConsent() {
+      const consent = localStorage.getItem(config.storageKey);
+      return consent ? JSON.parse(consent) : null;
+    }
+  
+    function saveConsent(consent) {
+      localStorage.setItem(config.storageKey, JSON.stringify(consent));
+    }
+  
+    function showBanner() {
+      cookieBanner.style.display = 'block';
+    }
+  
+    function hideBanner() {
+      cookieBanner.style.display = 'none';
+    }
+  
+    function initBanner() {
+      const consent = getConsent();
+      if (!consent) {
+        showBanner();
+      } else {
+        hideBanner();
+      }
+  
+      const acceptButton = document.getElementById(config.acceptButtonId);
+      const rejectButton = document.getElementById(config.rejectButtonId);
+  
+      acceptButton.addEventListener('click', function() {
+        saveConsent({ accepted: true, date: new Date().toISOString() });
+        hideBanner();
+      });
+  
+      rejectButton.addEventListener('click', function() {
+        saveConsent({ accepted: false, date: new Date().toISOString() });
+        hideBanner();
+      });
+  
+      // Permette di riaprire il banner e cambiare scelta
+      if (manageCookiesLink) {
+        manageCookiesLink.addEventListener('click', function(e) {
+          e.preventDefault();
+          showBanner();
+        });
+      }
+    }
+  
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initBanner);
+    } else {
+      initBanner();
+    }
+  })();
   </script>
 </body>
 </html>
