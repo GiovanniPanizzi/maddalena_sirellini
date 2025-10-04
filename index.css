@@ -89,7 +89,7 @@ h2 {
 }
 
 h3 {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     line-height: 1.2;
 }
 
@@ -270,7 +270,8 @@ header {
     flex-direction: column;
 }
 
-.contact-location h3 {
+.contact-location h2 {
+    font-size: 2.2rem;
     margin-top: calc(var(--spacing-unit) * 4);
     background-color: var(--color-accent-3);
     color: var(--color-secondary);
@@ -302,7 +303,7 @@ header {
     font-style: normal;
 }
 
-.location-list h4 {
+.location-list h3 {
     padding-top: 0;
     margin-bottom: 0;
 }
@@ -312,7 +313,7 @@ header {
     padding: calc(var(--spacing-unit) * 4);
 }
 
-.location-item h4 {
+.location-item h3 {
     position: absolute;        /* esce dal flusso senza spingere gli altri elementi */
     top: 2rem;              /* regola quanto "si accavalla" sull'iframe */
     left: 50%;
@@ -344,6 +345,10 @@ iframe {
     position: relative;
     z-index: 5;
     border-radius: var(--border-radius);
+}
+
+.bg-image-1 {
+    display: none;
 }
 
 /*------------------------------------*\
@@ -421,5 +426,16 @@ footer a {
         margin-top: calc(var(--spacing-unit) * 8);
         max-width: 300px;
         width: 100%;
+    }
+
+    .location-list {
+        max-width: 500px;
+    }
+
+    .bg-image-1 {
+        display: block;
+        position: absolute;
+        margin-top: calc(var(--spacing-unit) * 18);
+        left: calc(300px + 30vw);
     }
 }
